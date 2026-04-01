@@ -1,4 +1,4 @@
-# Nettoyage et préparation des données d'un base de ventes B2B
+# Nettoyage et préparation des données d'une base de ventes B2B
 
 **Secteur :** Sales  
 
