@@ -1,8 +1,12 @@
 # Nettoyage et préparation des données d'un base de ventes B2B
 
 **Secteur :** Sales  
+
 **Outils :** Python · Pandas
+
 **Compétences :** Data Cleaning · Exploratory Data Analysis (EDA) · Data Quality Management · Data Validation · Math & statistics
+
+---
 
 ## Contexte
 
