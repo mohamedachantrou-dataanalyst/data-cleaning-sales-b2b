@@ -1,5 +1,9 @@
 # Nettoyage et préparation des données d'un base de ventes B2B
 
+**Secteur :** Sales  
+**Outils :** Python · Pandas
+**Compétences :** Data Cleaning · Exploratory Data Analysis (EDA) · Data Quality Management · Data Validation · Math & statistics
+
 ## Contexte
 
 Dans les environnements réels d’entreprise, les données brutes sont rarement directement exploitables.
@@ -11,7 +15,7 @@ Assurer une bonne qualité des données est une étape essentielles, car des don
 
 Le dataset utilisé dans ce projet contient plus de **10 000 commandes B2B**.
 
-Colonnes :
+**Colonnes :**
 
 ``order_id``
 ``customer_name``
@@ -33,8 +37,15 @@ Nettoyer et préparer les données afin de les rendre exploitables pour les éta
 
 ## Structure du Repository
 
-*(à compléter)*
-
+```
+├── README.md
+├── SalesB2B_DataCleaning.ipynb                         ← Projet complet détaillé avec toutes les étapes
+├── Input/
+│   └── DirtySalesB2BDataset.csv
+├── Output/
+    └── CleanedSalesB2BDataset.xlsx
+  
+```
 ---
 
 # Étapes du projet
@@ -47,6 +58,7 @@ Exploration du dataset afin d’identifier :
 - problèmes de standardisation
 - valeurs aberrantes
 - valeurs manquantes
+- doublons
 
 ---
 
@@ -58,9 +70,9 @@ Identification et suppression des lignes dupliquées.
 
 ### 2.2 Standardisation des données
 
-- suppression des espaces
+- suppression des espaces blancs
 - suppression des caractères non désirés
-- standardisation des valeurs
+- standardisation des variants de valeurs
 - conversion vers le bon type de données
 
 ### 2.3 Gestion des valeurs aberrantes
@@ -69,8 +81,8 @@ Correction ou remplacement des valeurs impossibles (dates, quantités négatives
 
 ### 2.4 Gestion des valeurs manquantes (NaN)
 
-- remplacement par valeurs cohérentes
-- "Unknown" pour certaines catégories
+- remplacement par valeurs cohérentes en se basant sur la logique métier
+- "Unknown" pour des champs catégoriels
 - médiane pour limiter l’impact statistique
 
 ### 2.5 Post-cleaning validation
@@ -85,14 +97,16 @@ Vérification :
 
 ---
 
+
 # Résultats
 
-- Dataset initial : **10 200 lignes**, dont **200 doublons**
-- Réduction d’environ **12 %**
-- Colonnes initialement de type **object**
-- Conversion vers les **bons types de données**
-- Plus de **11 % de valeurs manquantes** initialement
-- Après nettoyage : **0 NaN**
-- Données **standardisées et sans valeurs aberrantes**
+| Indicateur | Avant nettoyage | Après nettoyage |
+|---|---|---|
+| Nombre de lignes | 10 200 | ~ 9 000 **(12% de réduction)** |
+| Types de données | Toutes les colonnes en `object` | Conversion vers les types appropriés |
+| Valeurs manquantes | > 11 % du dataset | 0 |
+| Valeurs manquantes par colonne | entre 10 % et 15 % du dataset | 0 |
+| Formatage des données | Incohérences et problèmes de standardisation | Données standardisées |
+| Valeurs aberrantes | Présentes | Aucune |
 
 Dataset prêt pour les étapes d’analyse.
